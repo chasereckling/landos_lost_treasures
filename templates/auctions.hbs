@@ -1,0 +1,11 @@
+<h1>Lando's Auction House</h1>
+
+<ul>
+  {{#each}}
+  <li>{{#link-to 'auction' this.id}}{{title}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{#link-to 'new-auction' classNames="btn btn-primary"}}New auction{{/link-to}}
+
+{{outlet}}
