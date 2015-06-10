@@ -1,4 +1,5 @@
 <h1>{{title}}</h1>
+<h1>{{date}}</h1>
 
 {{#if isEditing}}
 <form>
@@ -16,7 +17,6 @@
 </form>
 
 {{else}}
-<p>{{body}}</p>
 
 <button class="btn btn-primary" {{action 'edit'}}>Edit</button>
 <button class="btn btn-danger" {{action 'delete'}}>Delete</button>
@@ -32,8 +32,8 @@
 </p>
 {{/each}}
 
-{{#link-to 'new-item' this class="btn btn-default"}}New item{{/link-to}}
-
 {{outlet}}
+
+{{#link-to 'new-item' this class="btn btn-default"}}New item{{/link-to}}
 
 {{/if}}

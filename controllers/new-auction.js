@@ -8,6 +8,10 @@ App.NewAuctionController = Ember.Controller.extend({
       });
       newAuction.save();
       this.transitionToRoute('auctions');
+
+      this.set('title', null),
+      this.set('body', null),
+      this.set('date', null)
     }
   }
 });
