@@ -1,0 +1,17 @@
+<div class="form-group">
+  <form {{action 'save' on='submit'}}>
+    <p>
+      {{input id="item-title" class="form-control" type="text" valueBinding="title" placeholder="Enter your Item Title"}}
+    </p>
+    <p>
+      {{textarea rows="4" id="item-description" class="form-control" type="description" valueBinding="description" placeholder="Enter your Item Description"}}
+    </p>
+    <p>
+      {{input id="item-price" class="form-control" type="text" valueBinding="price" placeholder="Enter the Item Price"}}
+    </p>
+    <p>
+      {{input id="item-image" class="form-control" type="text" valueBinding="image" placeholder="Paste an image url here for the item"}}
+    </p>
+    <button id ="add-auction"class="btn btn-large">submit</button>
+  </form>
+</div>

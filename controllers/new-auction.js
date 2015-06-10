@@ -1,6 +1,6 @@
 App.NewAuctionController = Ember.Controller.extend({
   actions: {
-    save:function(){
+    save: function(){
       var newAuction = this.store.createRecord('auction', {
         title: this.get('title'),
         body: this.get('body'),
