@@ -1,6 +1,3 @@
-<h1>{{title}}</h1>
-<h1>{{date}}</h1>
-
 {{#if isEditing}}
 <form>
   <div class="form-group">
@@ -17,22 +14,26 @@
 </form>
 
 {{else}}
-
-<button class="btn btn-primary" {{action 'edit'}}>Edit</button>
-<button class="btn btn-danger" {{action 'delete'}}>Delete</button>
-
-<h2>Items</h2>
-
+<div class="panel panel-default">
+  <div class="panel-header">
+    <h1><span>{{title}}</span><span style="float: right">{{date}}</span></h1>
+  </div>
+  <div class="panel-body">
+    <p align=center>
+      {{body}}
+    </p>
+  </div>
 <div class="panel panel-body">
 {{#each item in model.items}}
 
-  <ul class="img-list">
+  <ul class="img-list" {{action 'showModal' item}}>
     <li class="sizing col-md-3">
-      <img class="item-image" {{action 'showModal' item}} {{bind-attr src=item.image}}/>
+      <img class="item-image" {{bind-attr src=item.image}}/>
       <span class="text-content"><span>{{item.name}}</span></span>
     </li>
   </ul>
 {{/each}}
+</div>
 </div>
 
 <!-- Modal -->
@@ -47,7 +48,7 @@
       </div>
       <div class="modal-body">
         <p>{{currentItem.description}}</p>
-        <span>Item price: {{currentItem.price}}</span>
+        <span>Item price: {{currentItem.price}}<span class="star-wars"> {{currentItem.currency}}</span></span>
       </div>
     </div>
   </div>
@@ -56,6 +57,9 @@
 {{outlet}}
 <div class="footer">
   {{#link-to 'new-item' this class="btn btn-default"}}New item{{/link-to}}
+  <span class="btn btn-primary" {{action 'edit'}}>Edit</span>
+  <span class="btn btn-danger" {{action 'delete'}}>Delete</span>
+
 </div>
 
 {{/if}}

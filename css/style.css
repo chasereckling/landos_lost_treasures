@@ -15,13 +15,17 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #FFF568
+  color: #2d3033
 }
 
 .item-image {
-  background-color: blue;
   cursor: pointer;
 
+}
+
+.panel {
+  background-color: #f8f8f8;
+  text-align: center;
 }
 
 .item-image:hover {
@@ -37,7 +41,12 @@ a:hover {
   src: url("../fonts/star-wars.ttf");
 }
 
-.star-wars {
+img{
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.star-wars{
   font-family: star-wars;
 }
 
@@ -104,6 +113,10 @@ span.text-content span {
 
 .modal-content {
   background-color: #2d3033;
+}
+
+.col-sm-4 {
+  height: 400px;
 }
 
 /*For color code references*/

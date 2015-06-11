@@ -1,8 +1,9 @@
 App.NewItemController = Ember.Controller.extend({
   needs: ['auction'],
   selectContentType: [
-        {label: "All", value: "$"},
-        {label: "Text", value: "!"},
+        {label: "Credits", value: "$"},
+        {label: "Rebel Dollars", value: "!"},
+        {label: "Nova Crystals", value: "+"},
     ],
   actions: {
     save: function() {
@@ -21,7 +22,7 @@ App.NewItemController = Ember.Controller.extend({
 
       this.transitionToRoute('auction', auction.id);
 
-      this.set('title', null),
+      this.set('name', null),
       this.set('description', null),
       this.set('price', null),
       this.set('image', null)

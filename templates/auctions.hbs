@@ -1,7 +1,11 @@
 {{outlet}}
-<ul>
-  {{#each}}
-  <li>{{#link-to 'auction' this.id}}{{title}}{{/link-to}}</li>
-  <img {{bind-attr src=items.firstObject.image}}/>
-  {{/each}}
-</ul>
+<div class="panel">
+  <div class="row">
+    {{#each}}
+      <div class="col-sm-4 item-image">{{#link-to 'auction' this.id}}
+          <h3>{{title}}</h3>
+          <img {{bind-attr src=items.firstObject.image}}/>{{/link-to}}
+      </div>
+    {{/each}}
+  </div>
+</div>
