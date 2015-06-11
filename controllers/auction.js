@@ -12,6 +12,10 @@ App.AuctionController = Ember.ObjectController.extend({
     },
     save: function() {
       this.set('isEditing', false);
+    },
+    showModal: function(item) {
+      this.set('currentItem', item)
+      $("#myModal").modal('show');
     }
   }
 });

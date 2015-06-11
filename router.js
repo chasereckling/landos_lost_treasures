@@ -5,4 +5,5 @@ App.Router.map(function(){
   this.resource('auction', {path: '/:auction_id'}, function() {
     this.resource('new-item');
   });
+  this.resource('item', {path: '/:item_id'});
 });

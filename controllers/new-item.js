@@ -3,7 +3,7 @@ App.NewItemController = Ember.Controller.extend({
   actions: {
     save: function() {
       var newItem = this.store.createRecord('item', {
-        title: this.get('title'),
+        name: this.get('name'),
         description: this.get('description'),
         price: this.get('price'),
         image: this.get('image')

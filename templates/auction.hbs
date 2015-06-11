@@ -23,14 +23,38 @@
 
 <h2>Items</h2>
 
-{{#each items}}
-<p>
-  {{title}}
-  {{description}}
-  {{price}}
-  <img {{bind-attr src=image}}/>
-</p>
+{{#each item in model.items}}
+<div {{action 'showModal' item}}>
+  {{item.name}}
+  {{item.description}}
+  {{item.price}}
+  <img {{bind-attr src=item.image}}/>
+</div>
 {{/each}}
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{currentItem.name}}</h4>
+        <img {{bind-attr src=currentItem.image}}/>
+      </div>
+      <div class="modal-body">
+        <p>{{currentItem.description}}</p>
+      </div>
+      <div class="modal-footer">
+        <span>Item price: {{currentItem.price}}</span>
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 {{outlet}}
 

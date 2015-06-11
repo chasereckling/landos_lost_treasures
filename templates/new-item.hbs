@@ -1,13 +1,13 @@
 <div class="form-group">
   <form>
     <p>
-      {{input id="item-title" class="form-control" type="text" value=title placeholder="Enter your Item Title"}}
+      {{input id="item-title" class="form-control" type="text" valueBinding="name" placeholder="Enter your Item Title"}}
     </p>
     <p>
-      {{textarea rows="4" id="item-description" class="form-control" type="description" value=description placeholder="Enter your Item Description"}}
+      {{textarea rows="4" id="item-description" class="form-control" type="description" valueBinding="description" placeholder="Enter your Item Description"}}
     </p>
     <p>
-      {{input id="item-price" class="form-control" type="text" value=price placeholder="Enter the Item Price"}}
+      {{input id="item-price" class="form-control" type="text" valueBinding="price" placeholder="Enter the Item Price"}}
     </p>
     <p>
       {{input id="item-image" class="form-control" type="text" valueBinding="image" placeholder="Paste an image url here for the item"}}
