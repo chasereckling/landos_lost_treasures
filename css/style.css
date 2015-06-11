@@ -18,9 +18,18 @@ a:hover {
   color: #FFF568
 }
 
-img {
-  max-height: 200px;
-  max-width: 200px;
+.item-image {
+  background-color: blue;
+  cursor: pointer;
+
+}
+
+.item-image:hover {
+  opacity: 0.4;
+  -webkit-transition: opacity 1000ms;
+  -moz-transition: opacity 1000ms;
+  -o-transition: opacity 1000ms;
+  transition: opacity 1000ms;
 }
 
 @font-face {
@@ -32,11 +41,70 @@ img {
   font-family: star-wars;
 }
 
+ul.img-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.img-list li {
+  display: inline-block;
+  margin: 0 1em 1em 0;
+  position: relative;
+}
+
+span.text-content {
+  color: #2d3033;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: table;
+  left: 0;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: opacity 1000ms;
+  -moz-transition: opacity 1000ms;
+  -o-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
 
 
+ul.img-list li:hover span.text-content {
+  opacity: 1;
+}
 
+span.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
 
+.sizing {
+  max-height: 200px;
+  width: 200px;
+  padding: 0;
+  margin: 20px;
+}
 
+.sizing span.text-content span, span.text-content, .sizing img{
+  max-height: 200px;
+  width: 200px;
+  margin: 0;
+}
+
+#myModal {
+  text-align: center;
+}
+
+.modal-dialog {
+  width: 400px;
+}
+
+.modal-content {
+  background-color: #2d3033;
+}
 
 /*For color code references*/
 /*colors

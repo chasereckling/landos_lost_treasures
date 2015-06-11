@@ -1,9 +1,7 @@
+{{outlet}}
 <ul>
   {{#each}}
   <li>{{#link-to 'auction' this.id}}{{title}}{{/link-to}}</li>
+  <img {{bind-attr src=items.firstObject.image}}/>
   {{/each}}
 </ul>
-
-{{#link-to 'new-auction' classNames="btn btn-primary"}}New auction{{/link-to}}
-
-{{outlet}}

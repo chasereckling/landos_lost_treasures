@@ -23,20 +23,21 @@
 
 <h2>Items</h2>
 
+<div class="panel panel-body">
 {{#each item in model.items}}
-<div {{action 'showModal' item}}>
-  {{item.name}}
-  {{item.description}}
-  {{item.price}}
-  {{item.currency}}
-  <img {{bind-attr src=item.image}}/>
-</div>
+
+  <ul class="img-list">
+    <li class="sizing col-md-3">
+      <img class="item-image" {{action 'showModal' item}} {{bind-attr src=item.image}}/>
+      <span class="text-content"><span>{{item.name}}</span></span>
+    </li>
+  </ul>
 {{/each}}
+</div>
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -46,19 +47,15 @@
       </div>
       <div class="modal-body">
         <p>{{currentItem.description}}</p>
-      </div>
-      <div class="modal-footer">
         <span>Item price: {{currentItem.price}}</span>
-
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-
   </div>
 </div>
 
 {{outlet}}
-
-{{#link-to 'new-item' this class="btn btn-default"}}New item{{/link-to}}
+<div class="footer">
+  {{#link-to 'new-item' this class="btn btn-default"}}New item{{/link-to}}
+</div>
 
 {{/if}}
