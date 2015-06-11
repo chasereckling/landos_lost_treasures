@@ -3,5 +3,6 @@ App.Item = DS.Model.extend({
   description: DS.attr(),
   price: DS.attr(),
   image: DS.attr(),
+  currency: DS.attr(),
   auction: DS.belongsTo('auction', {async: true})
 });

@@ -1,12 +1,17 @@
 App.NewItemController = Ember.Controller.extend({
   needs: ['auction'],
+  selectContentType: [
+        {label: "All", value: "$"},
+        {label: "Text", value: "!"},
+    ],
   actions: {
     save: function() {
       var newItem = this.store.createRecord('item', {
         name: this.get('name'),
         description: this.get('description'),
         price: this.get('price'),
-        image: this.get('image')
+        image: this.get('image'),
+        currency: this.get('selectedContentType.value')
       });
       newItem.save();
 

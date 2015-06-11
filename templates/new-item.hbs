@@ -12,6 +12,15 @@
     <p>
       {{input id="item-image" class="form-control" type="text" valueBinding="image" placeholder="Paste an image url here for the item"}}
     </p>
+    <p>
+      {{view Ember.Select
+    content=selectContentType
+    optionValuePath="content.value"
+    optionLabelPath="content.label"
+    selectionBinding=selectedContentType}}
+
+
+    </p>
     <button id ="add-auction" class="btn btn-large" {{action 'save'}}>submit</button>
   </form>
 </div>

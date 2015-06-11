@@ -23,6 +23,15 @@ img {
   max-width: 200px;
 }
 
+@font-face {
+  font-family: star-wars;
+  src: url("../fonts/star-wars.ttf");
+}
+
+.star-wars {
+  font-family: star-wars;
+}
+
 
 
 
